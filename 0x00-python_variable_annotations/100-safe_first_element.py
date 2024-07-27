@@ -1,5 +1,5 @@
-'''Task 10 answer.
-'''
+#!/usr/bin/env python3
+"""augment the following code"""
 from typing import Any, Sequence, Union
 
 
