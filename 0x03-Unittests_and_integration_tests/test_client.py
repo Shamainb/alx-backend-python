@@ -83,13 +83,14 @@ class TestGithubOrgClient(unittest.TestCase):
                     "fork": False,
                     "url": "https://api.github.com/repos/google/kratu",
                     "created_at": "2013-03-04T22:52:33Z",
-                    "updated_at": "2019-11-15T22:22:16Z",
-                    "has_issues": True,
+                    "updated_at": "2019-11-15T22:22:16Z", 
+                     "has_issues": True,
                     "forks": 32,
                     "default_branch": "master",
                 },
             ]
         }
+
         mock_get_json.return_value = test_payload["repos"]
         with patch(
                 "client.GithubOrgClient._public_repos_url",
@@ -110,6 +111,7 @@ class TestGithubOrgClient(unittest.TestCase):
         ({'license': {'key': "bsd-3-clause"}}, "bsd-3-clause", True),
         ({'license': {'key': "bsl-1.0"}}, "bsd-3-clause", False),
     ])
+
     def test_has_license(self, repo: Dict, key: str, expected: bool) -> None:
         """Tests the `has_license` method."""
         gh_org_client = GithubOrgClient("google")
